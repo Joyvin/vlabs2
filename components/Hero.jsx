@@ -22,7 +22,7 @@ export default function Hero() {
 					/>
 					<div className="text-center title text-[78px]">
 						Welcome To <br /> Virtual{" "}
-						<span className="text-[#af9fe5]">Labs</span> CRCE
+						<span className="text-[#af9fe5]">Labs</span> CRCE !
 					</div>
 				</div>
 			</div>

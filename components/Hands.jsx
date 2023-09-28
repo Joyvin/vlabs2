@@ -3,7 +3,7 @@ import React from "react";
 export default function Hands() {
 	return (
 		<>
-			<div className="w-screen h-screen flex items-center mx-16">
+			<div className="flex mx-16">
 				<div className="flex mb-16">
 					<div className="w-1/2 ml-16">
 						<div
@@ -34,7 +34,7 @@ export default function Hands() {
 						</div>
 					</div>
 					<div className="w-1/2 flex justify-center">
-						<img src="/img/home/type2.gif" alt="" />
+						<img className="" src="/img/home/type2.gif" alt="" />
 					</div>
 				</div>
 			</div>
