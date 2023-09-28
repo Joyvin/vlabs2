@@ -10,14 +10,9 @@ export default function Heady() {
 					>
 						<img
 							src="/img/crcelogo.jpg"
-							className="h-8 pr-3 border-r-2"
-							alt="Flowbite Logo"
+							className="h-10 pr-3 border-r-2"
 						/>
-						<img
-							src="/img/logo-long.png"
-							className="h-8 mx-3"
-							alt="Flowbite Logo"
-						/>
+						<img src="/img/logo-long.png" className="h-10 mx-3" />
 					</a>
 					<button
 						data-collapse-toggle="navbar-default"
