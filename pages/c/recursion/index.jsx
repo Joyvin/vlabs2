@@ -1,12 +1,12 @@
 import React from "react";
 import Module from "@/components/Module";
 import Lab from "@/components/Stack/Lab";
-import Test from "@/components/Bubble/Test";
-import Theory from "@/components/Bubble/Theory";
-import Simul from "@/components/Bubble/Simul";
+import Test from "@/components/Recursion/Test";
+import Theory from "@/components/Recursion/Theory";
+import Simul from "@/components/Recursion/Simul";
 
-export default function Bubble() {
-	const title = "Bubble Sort";
+export default function Ascii() {
+	const title = "Recursion";
 
 	return (
 		<>

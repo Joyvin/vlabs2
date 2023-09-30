@@ -1,12 +1,12 @@
 import React from "react";
 import Module from "@/components/Module";
 import Lab from "@/components/Stack/Lab";
-import Test from "@/components/Bubble/Test";
-import Theory from "@/components/Bubble/Theory";
-import Simul from "@/components/Bubble/Simul";
+import Test from "@/components/FunctionCall/Test";
+import Theory from "@/components/FunctionCall/Theory";
+import Simul from "@/components/FunctionCall/Simul";
 
-export default function Bubble() {
-	const title = "Bubble Sort";
+export default function FnCall() {
+	const title = "Function Calling";
 
 	return (
 		<>
