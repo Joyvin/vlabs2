@@ -5,7 +5,11 @@ import Link from "next/link";
 
 export default function DS() {
 	const title = "Data Structures";
-	const [subpages, setSubpages] = useState([]);
+	const [subpages, setSubpages] = useState([
+		"Linked List",
+		"Queues",
+		"Stacks",
+	]);
 	const [pages, setPages] = useState();
 	const [rImages, setRImages] = useState([]);
 

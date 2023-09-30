@@ -5,13 +5,19 @@ import Link from "next/link";
 
 export default function C() {
 	const title = "C Programming";
-	const [subpages, setSubpages] = useState([]);
+	const [subpages, setSubpages] = useState([
+		"Ascii",
+		"Bubble Sort",
+		"Loops",
+		"Matrix",
+		"String",
+	]);
 	const [pages, setPages] = useState();
 	const [rImages, setRImages] = useState([]);
 
 	useEffect(() => {
 		axios
-			.post("/api/subpages", { dir: "./pages/c" })
+			.post("/api/subpages", { dir: "./pages/ds" })
 			.then((e) => {
 				getNum();
 				setSubpages(e.data.subdirs);
