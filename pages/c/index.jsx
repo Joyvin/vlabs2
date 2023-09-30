@@ -13,13 +13,19 @@ export default function C() {
 		"String",
 	]);
 	const [pages, setPages] = useState();
-	const [rImages, setRImages] = useState([]);
+	const [rImages, setRImages] = useState([
+		"Ascii",
+		"Bubble Sort",
+		"Loops",
+		"Matrix",
+		"String",
+	]);
 
 	useEffect(() => {
+		getNum();
 		axios
 			.post("/api/subpages", { dir: "./pages/ds" })
 			.then((e) => {
-				getNum();
 				setSubpages(e.data.subdirs);
 				setPages(e.data.subdirs);
 			})
