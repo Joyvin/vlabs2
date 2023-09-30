@@ -10,8 +10,8 @@ export default function DS() {
 		"Queues",
 		"Stacks",
 	]);
-	const [pages, setPages] = useState();
-	const [rImages, setRImages] = useState(["Linked List", "Queues", "Stacks"]);
+	const [pages, setPages] = useState(["Linked List", "Queues", "Stacks"]);
+	const [rImages, setRImages] = useState([]);
 
 	useEffect(() => {
 		getNum();

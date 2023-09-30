@@ -12,14 +12,14 @@ export default function C() {
 		"Matrix",
 		"String",
 	]);
-	const [pages, setPages] = useState();
-	const [rImages, setRImages] = useState([
+	const [pages, setPages] = useState([
 		"Ascii",
 		"Bubble Sort",
 		"Loops",
 		"Matrix",
 		"String",
 	]);
+	const [rImages, setRImages] = useState([]);
 
 	useEffect(() => {
 		getNum();
