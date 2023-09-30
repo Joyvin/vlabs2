@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function Subjects() {
 	return (
@@ -9,13 +10,13 @@ export default function Subjects() {
 				</div>
 				<div className="grid xl:grid-cols-4 lg:grid-cols-3 ml-16 gaps-4">
 					<div className="">
-						<a
+						<Link
 							style={{
 								background:
 									"url('/img/home/3.png') top no-repeat",
 								backgroundSize: "cover",
 							}}
-							href="#"
+							href="/c"
 							class="block flex-col relative flex justify-end aspect-square max-w-sm border border-gray-200 rounded-3xl shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
 						>
 							<h5 class="mb-2 text-[2.5rem] font-bold text-white absolute mx-2.5 top-10 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -50,16 +51,16 @@ export default function Subjects() {
 									</div>
 								</div>
 							</div>
-						</a>
+						</Link>
 					</div>
 					<div className="">
-						<a
+						<Link
 							style={{
 								background:
 									"url('/img/home/2.png') top no-repeat",
 								backgroundSize: "cover",
 							}}
-							href="#"
+							href="/ds"
 							class="block flex-col relative flex justify-end aspect-square max-w-sm border border-gray-200 rounded-3xl shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
 						>
 							<h5 class="mb-2 text-[2.5rem] font-bold text-white absolute mx-2.5 top-10 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -94,10 +95,10 @@ export default function Subjects() {
 									</div>
 								</div>
 							</div>
-						</a>
+						</Link>
 					</div>
 					<div className="">
-						<a
+						<Link
 							style={{
 								background:
 									"url('/img/home/1.png') top no-repeat",
@@ -137,10 +138,10 @@ export default function Subjects() {
 									</div>
 								</div>
 							</div>
-						</a>
+						</Link>
 					</div>
 					<div className="hidden xl:block">
-						<a
+						<Link
 							style={{
 								background:
 									"url('/img/home/4.png') right top no-repeat",
@@ -180,7 +181,7 @@ export default function Subjects() {
 									</div>
 								</div>
 							</div>
-						</a>
+						</Link>
 					</div>
 				</div>
 			</div>

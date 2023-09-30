@@ -73,6 +73,8 @@ export default function Module({ theory, simulation, lab, test, title }) {
 										Object.values(categories).length - 1
 											? "bg-white p-3"
 											: ""
+									} ${
+										activeTab != idx ? "hidden" : ""
 									} absolute top-7 w-full rounded-xl ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2`}
 									style={{
 										opacity: activeTab !== idx ? "0" : "",

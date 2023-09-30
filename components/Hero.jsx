@@ -13,7 +13,7 @@ export default function Hero() {
 				}}
 				className="w-screen h-screen flex items-center justify-center absolute top-0"
 			></div>
-			<div className="w-screen h-[90%] flex flex-col items-center justify-center relative top-0">
+			<div className="w-full h-[90%] flex flex-col items-center justify-center relative top-0">
 				<div className="mb-[20rem] flex-col">
 					<img
 						className="mx-auto w-[60%] top-[60px] relative"
