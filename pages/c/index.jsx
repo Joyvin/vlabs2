@@ -11,6 +11,8 @@ export default function C() {
 		"Loops",
 		"Matrix",
 		"String",
+		"Function Calling",
+		"Recursion",
 	]);
 	const [pages, setPages] = useState([
 		"Ascii",
@@ -18,6 +20,8 @@ export default function C() {
 		"Loops",
 		"Matrix",
 		"String",
+		"Function Calling",
+		"Recursion",
 	]);
 	const [rImages, setRImages] = useState([]);
 
@@ -74,7 +78,7 @@ export default function C() {
 					<img src="/img/titleBuddy.png" alt="" className="h-20" />
 				</div>
 				<div className="flex mt-10 justify-center">
-					<div className="rounded-3xl focus-within:ring-2 focus-within:ring-blue-500 bg-white items-center flex shadow w-[50%]">
+					<div className="rounded-3xl ring-2 ring-blue-500 bg-white items-center flex shadow w-[50%]">
 						<Search className="text-gray-700 ml-4" />
 						<input
 							type="text"
