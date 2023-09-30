@@ -31,7 +31,6 @@ export default function C() {
 			})
 			.catch((error) => {
 				console.error(error);
-				setPages([...pages]);
 			});
 	}, []);
 
@@ -92,7 +91,7 @@ export default function C() {
 								return (
 									<div className="" key={idx}>
 										<Link
-											href={`${window.location}/${val
+											href={`/c/${val
 												.replaceAll(" ", "-")
 												.toLowerCase()}`}
 											class="block shadow flex-col relative flex justify-end max-w-sm border border-gray-200 rounded-3xl shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
