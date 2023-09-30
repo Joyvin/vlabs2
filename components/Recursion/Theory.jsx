@@ -10,7 +10,7 @@ export default function Theory() {
 				Recursion is a powerful programming technique where a function
 				calls itself to solve a problem. It is commonly used in
 				situations where a problem can be broken down into smaller,
-				similar subproblems. Let's explore the key concepts and
+				similar subproblems. Let&apos;s explore the key concepts and
 				properties of recursion:
 			</p>
 			<br />

@@ -21,7 +21,7 @@ export default function Theory() {
 				<li>
 					<span className="uline">Copy of Data:</span> When a function
 					is called with parameters passed by value, a duplicate of
-					the data is created inside the function's scope.
+					the data is created inside the function&apos;s scope.
 				</li>
 				<li>
 					<span className="uline">No Impact on Original:</span> Any
@@ -44,7 +44,7 @@ export default function Theory() {
 				<li>
 					<span className="uline">Immutable Data:</span> Call by Value
 					is often used with immutable data types or objects where you
-					don't want the original data to be modified.
+					don&apos;t want the original data to be modified.
 				</li>
 				<li>
 					<span className="uline">Predictable Behavior:</span> It
@@ -103,7 +103,7 @@ export default function Theory() {
 					in-place modifications on data structures.
 				</li>
 				<li>
-					<span className="uline">Efficiency Matters:</span> It's
+					<span className="uline">Efficiency Matters:</span> It&apos;s
 					beneficial in situations where efficiency and avoiding data
 					duplication are critical.
 				</li>
