@@ -24,12 +24,15 @@ export default function C() {
 	useEffect(() => {
 		getNum();
 		axios
-			.post("/api/subpages", { dir: "./pages/ds" })
+			.post("/api/subpages", { dir: "./pages/c" })
 			.then((e) => {
 				setSubpages(e.data.subdirs);
 				setPages(e.data.subdirs);
 			})
-			.catch((error) => console.error(error));
+			.catch((error) => {
+				console.error(error);
+				setPages([...pages]);
+			});
 	}, []);
 
 	const handleSearch = (e) => {
