@@ -21,7 +21,7 @@ const nodeTypes = {
 
 const initNodes = [
 	{
-		id: "1",
+		id: "0",
 		position: { x: 79, y: 92 },
 		data: {
 			label: "NULL",
@@ -30,10 +30,10 @@ const initNodes = [
 			address: "1102",
 			input: 1,
 			pos: "r",
+			type: "source",
 			selected: 0,
 		},
 		type: "variableNode",
-		sourcePosition: "right",
 	},
 ];
 
@@ -128,16 +128,17 @@ export default function LL() {
 		);
 		await delay(1800);
 		let e = initNodes[initNodes.length - 1];
-		idx = rear == 0 ? 1 : rear;
+		console.log(rear);
+		idx = rear;
 		let px = (idx + 1).toString();
-		tx = e.position.x + 140;
+		tx = e.position.x + parseInt(rear / 3 + 1) * 200;
 		const nodes = [
 			{
 				id: (++idx).toString(),
-				position: { x: tx, y: 92 },
+				position: { x: tx, y: 92 + parseInt(rear / 3 + 1) * 30 },
 				data: {
-					label: "",
-					name: "ele",
+					label: ("1000" * (rear / 3 + 1)).toString(),
+					name: "node",
 					addNull: 0,
 					input: 0,
 					selected: 0,
@@ -188,16 +189,17 @@ export default function LL() {
 		nodes.forEach((node) => {
 			addNode(node);
 		});
+
 		await delay(1800);
 
-		if (rear === 0) {
-			updateNodeValue("1", "1000");
-		} else {
-			updateNodeValue(
-				rear.toString(),
-				(parseInt(rear / 3) * 1000).toString()
-			);
-		}
+		setMessage(
+			"Now we traverse each node from start and look for the node with next value as NULL"
+		);
+		await delay(2500);
+		setMessage("We then make it point to our new node");
+		await delay(1800);
+		updateNodeValue(rear.toString(), ((rear / 3 + 1) * 1000).toString());
+
 		await delay(1800);
 		const newEdge = {
 			id: "e" + rear.toString(),
@@ -215,10 +217,12 @@ export default function LL() {
 				stroke: "#0d6efd",
 			},
 		};
+		console.log(newEdge);
 		addEdge(newEdge);
 		delay(1800);
 		setRear(idx);
 		setDis(false);
+		setMessage();
 	};
 
 	const deleteNode = async () => {
@@ -295,7 +299,7 @@ export default function LL() {
 
 	return (
 		<>
-			<div className="flex items-center">
+			<div className="block md:flex items-center">
 				<div className="">
 					<input
 						id="aBox"
@@ -314,35 +318,37 @@ export default function LL() {
 						name=""
 					/>
 				</div>
-				<button
-					disabled={dis}
-					onClick={append}
-					type="button"
-					class="flex items-center mr-3 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-				>
-					Append
-				</button>
-				<button
-					disabled={dis}
-					onClick={deleteNode}
-					type="button"
-					class="flex items-center mr-3 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-				>
-					Delete
-				</button>
-				<button
-					disabled={dis}
-					onClick={reset}
-					type="button"
-					class="flex items-center mr-3 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-				>
-					Reset
-				</button>
+				<div className="flex justify-start my-3">
+					<button
+						disabled={dis}
+						onClick={append}
+						type="button"
+						class="flex items-center mr-3 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+					>
+						Append
+					</button>
+					<button
+						disabled={dis}
+						onClick={deleteNode}
+						type="button"
+						class="flex items-center mr-3 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+					>
+						Delete
+					</button>
+					<button
+						disabled={dis}
+						onClick={reset}
+						type="button"
+						class="flex items-center mr-3 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+					>
+						Reset
+					</button>
+				</div>
 			</div>
 			{message && <Message value={message} />}
 			<div
 				className="border border-primary rounded-3 shadow-sm my-3"
-				style={{ width: "80vw", height: "70vh" }}
+				style={{ height: "70vh" }}
 			>
 				<ReactFlow
 					nodes={nodes}

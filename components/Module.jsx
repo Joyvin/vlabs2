@@ -18,7 +18,7 @@ export default function Module({ theory, simulation, lab, test, title }) {
 
 	return (
 		<>
-			<div className="w-[80%] mx-auto">
+			<div className="w-[90%] md:w-[80%] mx-auto">
 				<div className="flex items-center">
 					<h1 className="title py-6 text-[52px] text-sky-700">
 						{title}
@@ -26,7 +26,7 @@ export default function Module({ theory, simulation, lab, test, title }) {
 					<img
 						src="/img/titleBuddy.png"
 						alt=""
-						className="h-20 ml-5"
+						className="h-20 ml-5 hidden md:block"
 					/>
 				</div>
 				<div className="px-2 sm:px-0">
@@ -40,7 +40,7 @@ export default function Module({ theory, simulation, lab, test, title }) {
 									}}
 									className={({ selected }) =>
 										classNames(
-											"w-full rounded-lg py-2.5 text-sm font-medium leading-5 text-blue-700",
+											"w-full rounded-lg py-2.5 px-2 text-sm font-medium leading-5 text-blue-700",
 											"ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2",
 											selected
 												? "bg-white shadow"
