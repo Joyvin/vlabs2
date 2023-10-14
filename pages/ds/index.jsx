@@ -55,16 +55,20 @@ export default function DS() {
 					<img
 						src="/img/titleBuddy.png"
 						alt=""
-						className="h-20"
+						className="hidden md:block h-20"
 						style={{ transform: "scaleX(-1)" }}
 					/>
-					<h1 className="title mx-7 py-6 text-[52px] text-sky-700">
+					<h1 className="title mx-7 py-6 text-5xl lg:text-6xl xl:text-7xl text-sky-700">
 						{title}
 					</h1>
-					<img src="/img/titleBuddy.png" alt="" className="h-20" />
+					<img
+						src="/img/titleBuddy.png"
+						alt=""
+						className="h-20 hidden md:block"
+					/>
 				</div>
 				<div className="flex mt-10 justify-center">
-					<div className="rounded-3xl focus-within:ring-2 focus-within:ring-blue-500 bg-white items-center flex shadow w-[50%]">
+					<div className="rounded-3xl focus-within:ring-2 focus-within:ring-blue-500 bg-white items-center flex shadow w-full lg:w-[50%]">
 						<Search className="text-gray-700 ml-4" />
 						<input
 							type="text"
@@ -75,11 +79,11 @@ export default function DS() {
 					</div>
 				</div>
 				<div className="flex my-16 justify-center">
-					<div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-10">
+					<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
 						{pages &&
 							pages.map((val, idx) => {
 								return (
-									<div className="" key={idx}>
+									<div className="aspect-square" key={idx}>
 										<Link
 											href={`/ds/${val
 												.replaceAll(" ", "-")
@@ -92,7 +96,7 @@ export default function DS() {
 														rImages[idx % 10]
 													}.png`}
 													alt=""
-													className="h-[250px] p-5"
+													className="p-5"
 												/>
 												<div className="text-center border-t py-3 border-blue-700">
 													<strong className="text-[1.7rem]">
