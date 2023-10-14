@@ -3,20 +3,17 @@ import React from "react";
 export default function Hands() {
 	return (
 		<>
-			<div className="flex mx-16">
-				<div className="flex mb-16">
-					<div className="w-1/2 ml-16">
-						<div
-							className="title text-[78px] mb-8"
-							style={{ lineHeight: "4rem" }}
-						>
-							<strong>
-								<div className="">Hands-On </div>
-								<div className="">Education at</div>
-								<div className="">CRCE</div>
-							</strong>
+			<div className="flex lg:mx-16">
+				<div className="lg:flex mb-16 justify-between">
+					<div className="lg:w-1/2 lg:ml-16">
+						<div className="title text-5xl lg:text-7xl mb-8 mx-5 lg:mx-0">
+							<div className="">
+								Hands-On <br className="xl:block hidden" />{" "}
+								Education at <br className="xl:block hidden" />{" "}
+								CRCE
+							</div>
 						</div>
-						<div className="text-[1.5rem]">
+						<div className="mx-5 lg:mx-0 lg:text-xl xl:text-2xl">
 							<strong>
 								At CRCE, we firmly believe in the power of
 								hands-on learning. We understand that true
@@ -33,7 +30,7 @@ export default function Hands() {
 							</strong>
 						</div>
 					</div>
-					<div className="w-1/2 flex justify-center">
+					<div className="flex lg:w-1/2 justify-center items-center px-10 pt-5 lg:px-0 lg:pt-0">
 						<img className="" src="/img/home/type2.gif" alt="" />
 					</div>
 				</div>

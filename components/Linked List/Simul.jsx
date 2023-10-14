@@ -7,6 +7,7 @@ import ReactFlow, {
 	useEdgesState,
 	addEdge,
 	MarkerType,
+	Position,
 } from "reactflow";
 import array from "@/utils/array";
 import variable from "@/utils/variable";
@@ -27,11 +28,12 @@ const initNodes = [
 			type: "target",
 			name: "start",
 			address: "1102",
-			input: 0,
-			gates: 2,
+			input: 1,
+			pos: "r",
 			selected: 0,
 		},
 		type: "variableNode",
+		sourcePosition: "right",
 	},
 ];
 
@@ -39,8 +41,7 @@ export default function LL() {
 	const [nodes, setNodes, onNodesChange] = useNodesState(initNodes);
 	const [edges, setEdges, onEdgesChange] = useEdgesState([]);
 	const [message, setMessage] = useState();
-	const [rear, setRear] = useState(-1);
-	const [front, setFront] = useState(-1);
+	const [rear, setRear] = useState(0);
 	const [ele, setEle] = useState();
 	const [dis, setDis] = useState(false);
 	const [arr, setArr] = useState([]);
@@ -127,18 +128,18 @@ export default function LL() {
 		);
 		await delay(1800);
 		let e = initNodes[initNodes.length - 1];
-		idx = parseInt(e.id);
+		idx = rear == 0 ? 1 : rear;
 		let px = (idx + 1).toString();
-		tx = e.position.x + 100;
+		tx = e.position.x + 140;
 		const nodes = [
 			{
 				id: (++idx).toString(),
 				position: { x: tx, y: 92 },
 				data: {
-					label: "10",
+					label: "",
 					name: "ele",
 					addNull: 0,
-					input: 1,
+					input: 0,
 					selected: 0,
 				},
 
@@ -148,16 +149,17 @@ export default function LL() {
 					backgroundColor: "#c9cee1",
 					border: "solid 1px gray",
 				},
-				type: "group",
+				type: "output",
+				targetPosition: "left",
 			},
 			{
 				id: (++idx).toString(),
 				position: { x: 10, y: 10 },
 				data: {
-					label: elen,
+					label: ele,
 					name: "ele",
 					addNull: 0,
-					input: 1,
+					input: 0,
 					type: "target",
 					selected: 0,
 					pos: "l",
@@ -187,6 +189,35 @@ export default function LL() {
 			addNode(node);
 		});
 		await delay(1800);
+
+		if (rear === 0) {
+			updateNodeValue("1", "1000");
+		} else {
+			updateNodeValue(
+				rear.toString(),
+				(parseInt(rear / 3) * 1000).toString()
+			);
+		}
+		await delay(1800);
+		const newEdge = {
+			id: "e" + rear.toString(),
+			source: rear.toString(),
+			target: (rear + 1).toString(),
+			animated: true,
+			markerEnd: {
+				type: MarkerType.ArrowClosed,
+				width: 20,
+				height: 20,
+				color: "#0d6efd",
+			},
+
+			style: {
+				stroke: "#0d6efd",
+			},
+		};
+		addEdge(newEdge);
+		delay(1800);
+		setRear(idx);
 		setDis(false);
 	};
 

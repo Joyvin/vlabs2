@@ -4,8 +4,8 @@ import Link from "next/link";
 export default function Heady() {
 	return (
 		<>
-			<nav className="bg-white border-gray-200 dark:bg-gray-900">
-				<div className="w-[80%] flex flex-wrap items-center justify-between mx-auto p-4">
+			<nav className="bg-white border-gray-200">
+				<div className="flex flex-wrap items-center justify-between mx-auto p-2 sm:w-[80%] sm:p-4">
 					<Link href="/" className="flex items-center">
 						<img
 							src="/img/crcelogo.jpg"

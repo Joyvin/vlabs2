@@ -1,6 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
 import Heady from "@/components/Heady";
-import Footy from "@/components/Footy";
 
 export default function Document() {
 	return (
