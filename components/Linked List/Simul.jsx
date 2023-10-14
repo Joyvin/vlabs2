@@ -229,72 +229,32 @@ export default function LL() {
 		let a, t;
 
 		setDis(true);
-		setMessage("To dequeue first we check if the queue is empty or not");
+		setMessage(
+			"First we traverse each node from start till we reach the node containing next as NULL"
+		);
+		await delay(2500);
+		setMessage("Simultaneously we also keep track of the previous node");
 		await delay(1800);
-		selectVar("3", 1);
+		setMessage("Now we make the next value of last previous node as NULL");
 		await delay(1800);
-		setMessage("If rear = -1 it means queue is empty");
+		setEdges((prevArray) => prevArray.slice(0, -1));
+		await delay(1000);
+		updateNodeValue((rear - 3).toString(), "NULL");
 		await delay(1800);
-		if (rear == -1) {
-			setMessage("The Queue is empty can't dequeue anything");
-			await delay(1800);
-			setMessage("");
-			return;
-		} else {
-			setMessage("Since the queue is not empty we can dequeue");
-			await delay(1800);
-			selectVar("3", 0);
-			await delay(1800);
-			setMessage("We dequeue the element at front position");
-			await delay(1800);
-			updateNodeIndex("1", front);
-			await delay(1800);
-			a = arr;
-			t = a[front];
-			a[front] = "";
-			setArr(a);
-			updateNodeArrayValue("1", "label", a);
-			await delay(1800);
-			updateNodeIndex("1", null);
-			await delay(1800);
-			if (rear === front) {
-				setMessage(
-					"Since the queue is completely empty we set front and rear to -1"
-				);
-				await delay(1800);
-				updateNodeValue("2", -1);
-				await delay(1000);
-				updateNodeValue("3", -1);
-				await delay(1800);
-				setFront(-1);
-				setRear(-1);
-			} else {
-				setMessage("Now we increment front by 1");
-				await delay(1800);
-				t = front + 1;
-				setFront(t);
-				updateNodeValue("2", t);
-				await delay(1800);
-			}
-			setMessage("");
-			await delay(1800);
-		}
+		setMessage("Now we free the last node");
+		await delay(1800);
+		setNodes((prevArray) => prevArray.slice(0, -3));
+		setMessage();
 		setDis(false);
 	};
 
 	const reset = async () => {
 		setDis(true);
-		updateNodeValue("2", -1);
+		setNodes(initNodes);
+		setEdges([]);
+		setRear(0);
 		await delay(1800);
-		updateNodeValue("3", -1);
-		await delay(1800);
-		updateNodeArrayValue("1", "label", []);
-		await delay(1800);
-		setArr([]);
-		setFront(-1);
-		setRear(-1);
-		await delay(1800);
-		setDis(true);
+		setDis(false);
 	};
 
 	return (
