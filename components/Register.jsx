@@ -134,7 +134,7 @@ export default function Register() {
 										onChange={(e) => {
 											setCPassword(e.target.value);
 										}}
-										type="confirm-password"
+										type="password"
 										name="confirm-password"
 										id="confirm-password"
 										placeholder="••••••••"
