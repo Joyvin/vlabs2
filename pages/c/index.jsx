@@ -93,16 +93,16 @@ export default function C() {
 					</div>
 				</div>
 				<div className="flex my-16 justify-center">
-					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
+					<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
 						{pages &&
 							pages.map((val, idx) => {
 								return (
 									<div className="aspect-square" key={idx}>
 										<Link
-											href={`/ds/${val
+											href={`/c/${val
 												.replaceAll(" ", "-")
 												.toLowerCase()}`}
-											className="block shadow flex-col relative flex justify-end max-w-sm border border-gray-200 rounded-3xl shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+											class="block shadow flex-col relative flex justify-end max-w-sm border border-gray-200 rounded-3xl shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
 										>
 											<div className="rounded-3xl bg-white">
 												<img
