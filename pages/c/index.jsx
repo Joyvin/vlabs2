@@ -93,7 +93,7 @@ export default function C() {
 					</div>
 				</div>
 				<div className="flex my-16 justify-center">
-					<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
+					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
 						{pages &&
 							pages.map((val, idx) => {
 								return (
@@ -102,7 +102,7 @@ export default function C() {
 											href={`/ds/${val
 												.replaceAll(" ", "-")
 												.toLowerCase()}`}
-											class="block shadow flex-col relative flex justify-end max-w-sm border border-gray-200 rounded-3xl shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+											className="block shadow flex-col relative flex justify-end max-w-sm border border-gray-200 rounded-3xl shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
 										>
 											<div className="rounded-3xl bg-white">
 												<img

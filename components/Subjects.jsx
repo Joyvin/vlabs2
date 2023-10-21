@@ -19,9 +19,9 @@ export default function Subjects() {
 								backgroundSize: "cover",
 							}}
 							href="/c"
-							class="block flex-col relative flex justify-end aspect-square max-w-sm border border-gray-200 rounded-3xl shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+							className="block flex-col relative flex justify-end aspect-square max-w-sm border border-gray-200 rounded-3xl shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
 						>
-							<h5 class="mb-2 text-3xl font-bold text-white absolute mx-2.5 top-10 xl:text-[2.5rem] lg:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+							<h5 className="mb-2 text-3xl font-bold text-white absolute mx-2.5 top-10 xl:text-[2.5rem] lg:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
 								C <br />
 								<div className="mt-4">Programming</div>
 							</h5>
@@ -63,9 +63,9 @@ export default function Subjects() {
 								backgroundSize: "cover",
 							}}
 							href="/ds"
-							class="block flex-col relative flex justify-end aspect-square max-w-sm border border-gray-200 rounded-3xl shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+							className="block flex-col relative flex justify-end aspect-square max-w-sm border border-gray-200 rounded-3xl shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
 						>
-							<h5 class="mb-2 text-3xl font-bold text-white absolute mx-2.5 top-10  xl:text-[2.5rem] lg:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+							<h5 className="mb-2 text-3xl font-bold text-white absolute mx-2.5 top-10  xl:text-[2.5rem] lg:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
 								Data <br />
 								<div className="mt-4">Structures</div>
 							</h5>
@@ -107,9 +107,9 @@ export default function Subjects() {
 								backgroundSize: "cover",
 							}}
 							href="#"
-							class="block flex-col relative flex justify-end aspect-square max-w-sm border border-gray-200 rounded-3xl shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+							className="block flex-col relative flex justify-end aspect-square max-w-sm border border-gray-200 rounded-3xl shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
 						>
-							<h5 class="mb-2 text-3xl font-bold text-white absolute mx-2.5 top-10  xl:text-[2.5rem] lg:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+							<h5 className="mb-2 text-3xl font-bold text-white absolute mx-2.5 top-10  xl:text-[2.5rem] lg:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
 								NLP
 							</h5>
 							<div className="bg-white w-full rounded-b-3xl h-[30%] flex flex-col justify-center">
@@ -150,9 +150,9 @@ export default function Subjects() {
 								backgroundSize: "cover",
 							}}
 							href="#"
-							class="block flex-col relative flex justify-end aspect-square max-w-sm border border-gray-200 rounded-3xl shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+							className="block flex-col relative flex justify-end aspect-square max-w-sm border border-gray-200 rounded-3xl shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
 						>
-							<h5 class="mb-2 text-3xl font-bold text-white absolute mx-2.5 top-10  xl:text-[2.5rem] lg:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+							<h5 className="mb-2 text-3xl font-bold text-white absolute mx-2.5 top-10  xl:text-[2.5rem] lg:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
 								Algorithms
 							</h5>
 							<div className="bg-white w-full rounded-b-3xl h-[30%] flex flex-col justify-center">

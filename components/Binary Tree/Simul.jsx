@@ -19,6 +19,16 @@ const nodeTypes = {
 	arrayNode: array,
 };
 
+class BinaryTree {
+	constructor(data) {
+		this.data = data;
+		this.left = null;
+		this.right = null;
+	}
+}
+
+let bt = new BinaryTree();
+
 const initNodes = [
 	{
 		id: "0",
@@ -37,11 +47,11 @@ const initNodes = [
 	},
 ];
 
-export default function LL() {
+export default function Tree() {
 	const [nodes, setNodes, onNodesChange] = useNodesState(initNodes);
 	const [edges, setEdges, onEdgesChange] = useEdgesState([]);
 	const [message, setMessage] = useState();
-	const [rear, setRear] = useState(0);
+	const [front, setFront] = useState(0);
 	const [ele, setEle] = useState();
 	const [dis, setDis] = useState(false);
 	const [arr, setArr] = useState([]);
@@ -122,105 +132,67 @@ export default function LL() {
 
 	const append = async () => {
 		let idx, tx, t, a, newNode;
-		setDis(true);
-		setMessage(
-			"Lets start by creating a node with an element and a next address"
-		);
-		await delay(1800);
-		let e = initNodes[initNodes.length - 1];
-		console.log(rear);
-		idx = rear;
-		let px = (idx + 1).toString();
-		tx = e.position.x + parseInt(rear / 3 + 1) * 200;
-		const nodes = [
-			{
-				id: (++idx).toString(),
-				position: { x: tx, y: 92 + parseInt(rear / 3 + 1) * 30 },
-				data: {
-					label: ("1000" * (rear / 3 + 1)).toString(),
-					name: "node",
-					addNull: 0,
-					input: 0,
-					selected: 0,
+
+		if (front === 0) {
+			const nodes = [
+				{
+					id: (++idx).toString(),
+					position: { x: 150, y: 92 },
+					data: {
+						label: ("1000" * (rear / 3 + 1)).toString(),
+						name: "node",
+						addNull: 0,
+						input: 0,
+						selected: 0,
+					},
+
+					style: {
+						width: 170,
+						height: 95,
+						backgroundColor: "#c9cee1",
+						border: "solid 1px gray",
+					},
+					type: "output",
+					targetPosition: "left",
 				},
-
-				style: {
-					width: 170,
-					height: 95,
-					backgroundColor: "#c9cee1",
-					border: "solid 1px gray",
+				{
+					id: (++idx).toString(),
+					position: { x: 10, y: 10 },
+					data: {
+						label: ele,
+						name: "ele",
+						addNull: 0,
+						input: 0,
+						type: "target",
+						selected: 0,
+						pos: "l",
+					},
+					parentNode: px,
+					extent: "parent",
+					type: "variableNode",
 				},
-				type: "output",
-				targetPosition: "left",
-			},
-			{
-				id: (++idx).toString(),
-				position: { x: 10, y: 10 },
-				data: {
-					label: ele,
-					name: "ele",
-					addNull: 0,
-					input: 0,
-					type: "target",
-					selected: 0,
-					pos: "l",
+				{
+					id: (++idx).toString(),
+					position: { x: 100, y: 10 },
+					data: {
+						label: "NULL",
+						name: "next",
+						addNull: 0,
+						input: 1,
+						type: "source",
+						selected: 0,
+						pos: "r",
+					},
+					parentNode: px,
+					extent: "parent",
+					type: "variableNode",
 				},
-				parentNode: px,
-				extent: "parent",
-				type: "variableNode",
-			},
-			{
-				id: (++idx).toString(),
-				position: { x: 100, y: 10 },
-				data: {
-					label: "NULL",
-					name: "next",
-					addNull: 0,
-					input: 1,
-					type: "source",
-					selected: 0,
-					pos: "r",
-				},
-				parentNode: px,
-				extent: "parent",
-				type: "variableNode",
-			},
-		];
-		nodes.forEach((node) => {
-			addNode(node);
-		});
+			];
+			nodes.forEach((node) => {
+				addNode(node);
+			});
+		}
 
-		await delay(1800);
-
-		setMessage(
-			"Now we traverse each node from start and look for the node with next value as NULL"
-		);
-		await delay(2500);
-		setMessage("We then make it point to our new node");
-		await delay(1800);
-		updateNodeValue(rear.toString(), ((rear / 3 + 1) * 1000).toString());
-
-		await delay(1800);
-		const newEdge = {
-			id: "e" + rear.toString(),
-			source: rear.toString(),
-			target: (rear + 1).toString(),
-			animated: true,
-			markerEnd: {
-				type: MarkerType.ArrowClosed,
-				width: 20,
-				height: 20,
-				color: "#0d6efd",
-			},
-
-			style: {
-				stroke: "#0d6efd",
-			},
-		};
-		console.log(newEdge);
-		addEdge(newEdge);
-		delay(1800);
-		setRear(idx);
 		setDis(false);
 		setMessage();
 	};
