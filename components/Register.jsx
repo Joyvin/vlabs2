@@ -21,7 +21,7 @@ export default function Register() {
 		};
 
 		const record = await pb
-			.collection("users")
+			.collection("vlabs_users")
 			.create(data)
 			.then((e) => {
 				window.location.replace("/");
