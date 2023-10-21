@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Tab } from "@headlessui/react";
+import GuardedPage from "./GuardedPage";
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(" ");
@@ -17,7 +18,7 @@ export default function Module({ theory, simulation, lab, test, title }) {
 	const [activeTab, setActiveTab] = useState(0);
 
 	return (
-		<>
+		<GuardedPage>
 			<div className="w-[90%] md:w-[80%] mx-auto">
 				<div className="flex items-center">
 					<h1 className="title py-6 text-[52px] text-sky-700">
@@ -88,6 +89,6 @@ export default function Module({ theory, simulation, lab, test, title }) {
 					</div>
 				</div>
 			</div>
-		</>
+		</GuardedPage>
 	);
 }

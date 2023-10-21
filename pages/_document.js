@@ -6,7 +6,7 @@ export default function Document() {
 		<Html lang="en">
 			<Head />
 			<body className="bg-gray-100">
-				<Heady />
+				{typeof window != "undefined" ? <Heady /> : ""}
 				<Main />
 				{/* <Footy /> */}
 				<NextScript />
