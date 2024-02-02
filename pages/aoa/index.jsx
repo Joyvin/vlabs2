@@ -11,7 +11,11 @@ export default function AOA() {
 		"Selection Sort",
 		"Quick Sort",
 	]);
-	const [pages, setPages] = useState(["Bubble Sort"]);
+	const [pages, setPages] = useState([
+		"Bubble Sort",
+		"Selection Sort",
+		"Quick Sort",
+	]);
 	const [rImages, setRImages] = useState([]);
 
 	useEffect(() => {

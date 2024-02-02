@@ -1,24 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 import TestLayout from "../TestLayout";
 
-function Test({ title }) {
+function QuickSortTest({ title }) {
 	const questions = [
 		{
 			id: "q1",
-			text: "What is Selection Sort?",
+			text: "What is Quick Sort?",
 			options: [
 				{
 					id: "q1_optionA",
-					label: "A method for selecting elements randomly from a list.",
+					label: "A method for quickly selecting elements from a list.",
 				},
 				{
 					id: "q1_optionB",
-					label: "A simple sorting algorithm that divides the input list into a sorted and an unsorted region, selecting the smallest (or largest) element from the unsorted region and swapping it with the first element of the unsorted region.",
+					label: "A sorting algorithm that uses a divide-and-conquer strategy by selecting a 'pivot' element and partitioning the other elements into two subarrays.",
 					correct: true,
 				},
 				{
 					id: "q1_optionC",
-					label: "A technique for selecting elements based on their index.",
+					label: "A technique for quick indexing of array elements.",
 				},
 				{
 					id: "q1_optionD",
@@ -28,7 +28,7 @@ function Test({ title }) {
 		},
 		{
 			id: "q2",
-			text: "What is the primary characteristic of Selection Sort's time complexity?",
+			text: "What is the primary characteristic of Quick Sort's time complexity?",
 			options: [
 				{
 					id: "q2_optionA",
@@ -44,14 +44,14 @@ function Test({ title }) {
 				},
 				{
 					id: "q2_optionD",
-					label: "Quadratic time complexity O(n^2).",
+					label: "Average time complexity O(n log n), but worst-case time complexity O(n^2).",
 					correct: true,
 				},
 			],
 		},
 		{
 			id: "q3",
-			text: "Why does Selection Sort perform better in terms of swaps compared to Bubble Sort?",
+			text: "Why is Quick Sort generally more efficient than Bubble Sort and Selection Sort?",
 			options: [
 				{
 					id: "q3_optionA",
@@ -63,58 +63,58 @@ function Test({ title }) {
 				},
 				{
 					id: "q3_optionC",
-					label: "It selects the minimum (or maximum) element and swaps it with the first element of the unsorted region, reducing the number of swaps.",
+					label: "It utilizes a divide-and-conquer strategy and has an average time complexity of O(n log n).",
 					correct: true,
 				},
 				{
 					id: "q3_optionD",
-					label: "It uses a different swapping strategy than Bubble Sort.",
+					label: "It uses a different swapping strategy than Bubble Sort and Selection Sort.",
 				},
 			],
 		},
 		{
 			id: "q4",
-			text: "What is the main use case of Selection Sort?",
+			text: "What is the main idea behind the partitioning step in Quick Sort?",
 			options: [
 				{
 					id: "q4_optionA",
-					label: "Sorting large datasets efficiently.",
+					label: "To select a pivot element randomly.",
 				},
 				{
 					id: "q4_optionB",
-					label: "Debugging and verifying other sorting algorithms.",
-					correct: true,
+					label: "To compare all elements with each other.",
 				},
 				{
 					id: "q4_optionC",
-					label: "Sorting lists in reverse order.",
+					label: "To choose a pivot and rearrange the elements in such a way that elements smaller than the pivot are on the left, and elements greater than the pivot are on the right.",
+					correct: true,
 				},
 				{
 					id: "q4_optionD",
-					label: "None of the above.",
+					label: "To swap the first and last elements of the array.",
 				},
 			],
 		},
 		{
 			id: "q5",
-			text: "What happens during each pass in the Selection Sort algorithm?",
+			text: "What is the key advantage of Quick Sort over Bubble Sort and Selection Sort?",
 			options: [
 				{
 					id: "q5_optionA",
-					label: "Elements are randomly shuffled.",
+					label: "It always performs in linear time.",
 				},
 				{
 					id: "q5_optionB",
-					label: "The minimum (or maximum) element is selected from the unsorted region and swapped with the first element of the unsorted region.",
-					correct: true,
+					label: "It requires fewer passes through the entire array.",
 				},
 				{
 					id: "q5_optionC",
-					label: "Elements are grouped into pairs and compared.",
+					label: "It has a faster average-case time complexity of O(n log n).",
+					correct: true,
 				},
 				{
 					id: "q5_optionD",
-					label: "Elements are sorted into separate subarrays.",
+					label: "It is easier to implement.",
 				},
 			],
 		},
@@ -127,4 +127,4 @@ function Test({ title }) {
 	);
 }
 
-export default Test;
+export default QuickSortTest;

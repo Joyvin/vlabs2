@@ -4,25 +4,26 @@ export default function Theory() {
 	return (
 		<>
 			<h2>
-				<strong>Selection Sort:</strong>
+				<strong>Quick Sort:</strong>
 			</h2>
 			<p>
-				Selection Sort is a simple sorting algorithm that divides the
-				input list into a sorted and an unsorted region. The algorithm
-				repeatedly selects the smallest (or largest) element from the
-				unsorted region and swaps it with the first element of the
-				unsorted region. Let&apos;s explore the key concepts and
-				properties of Selection Sort:
+				Quick Sort is a highly efficient sorting algorithm that employs
+				a divide-and-conquer strategy. The algorithm selects a "pivot"
+				element from the array and partitions the other elements into
+				two subarrays, recursively sorting them. Let's explore the key
+				concepts and properties of Quick Sort:
 			</p>
 			<br />
 			<h2>
 				<strong>Algorithm Overview:</strong>
 			</h2>
 			<p>
-				The basic idea behind Selection Sort is to iteratively find the
-				minimum (or maximum) element from the unsorted region and swap
-				it with the first element of the unsorted region. This process
-				continues until the entire list is sorted.
+				The primary idea behind Quick Sort is to select a pivot element,
+				place it in its correct position, and partition the array into
+				two subarrays—one with elements smaller than the pivot and the
+				other with elements greater than the pivot. The process is then
+				applied recursively to the subarrays until the entire array is
+				sorted.
 			</p>
 			<br />
 			<h2>
@@ -30,16 +31,17 @@ export default function Theory() {
 			</h2>
 			<ul>
 				<li>
-					<span className="uline">Selection:</span> Find the minimum
-					(or maximum) element in the unsorted region.
+					<span className="uline">Pivot Selection:</span> Choose a
+					pivot element from the array.
 				</li>
 				<li>
-					<span className="uline">Swap:</span> Swap the found element
-					with the first element of the unsorted region.
+					<span className="uline">Partitioning:</span> Rearrange the
+					array so that elements less than the pivot are on the left,
+					and elements greater than the pivot are on the right.
 				</li>
 				<li>
-					<span className="uline">Move Boundaries:</span> Move the
-					boundaries between the sorted and unsorted regions.
+					<span className="uline">Recursion:</span> Apply the Quick
+					Sort algorithm recursively to the left and right subarrays.
 				</li>
 			</ul>
 			<br />
@@ -47,30 +49,49 @@ export default function Theory() {
 				<strong>Time Complexity:</strong>
 			</h2>
 			<p>
-				Selection Sort has a time complexity of O(n^2), similar to
-				Bubble Sort. While it is also inefficient for large lists, it
-				performs better than Bubble Sort in terms of the number of
-				swaps.
+				Quick Sort has an average-case time complexity of O(n log n),
+				making it one of the fastest sorting algorithms. However, its
+				worst-case time complexity is O(n^2) when poor pivot selection
+				leads to unbalanced partitions.
 			</p>
+			<br />
+			<h2>
+				<strong>Advantages:</strong>
+			</h2>
+			<ul>
+				<li>
+					<span className="uline">Efficiency:</span> Quick Sort is
+					highly efficient for large datasets due to its average-case
+					time complexity.
+				</li>
+				<li>
+					<span className="uline">In-Place Sorting:</span> It often
+					requires only a constant amount of additional memory.
+				</li>
+				<li>
+					<span className="uline">Parallelization:</span> The
+					divide-and-conquer nature allows for parallelization,
+					further improving performance.
+				</li>
+			</ul>
 			<br />
 			<h2>
 				<strong>Use Cases:</strong>
 			</h2>
 			<ul>
 				<li>
-					<span className="uline">Simplicity:</span> Selection Sort is
-					easy to understand and implement, making it suitable for
-					educational purposes.
+					<span className="uline">Large Datasets:</span> Quick Sort is
+					ideal for sorting large datasets efficiently.
 				</li>
 				<li>
-					<span className="uline">Small Lists:</span> In cases where
-					the list size is small and simplicity is prioritized over
-					efficiency, Selection Sort can be used.
+					<span className="uline">General-Purpose Sorting:</span> It
+					is commonly used as a general-purpose sorting algorithm in
+					various applications.
 				</li>
 				<li>
-					<span className="uline">Minimizing Swaps:</span> If the cost
-					of swapping elements is a concern, Selection Sort may be
-					preferred over Bubble Sort.
+					<span className="uline">System Libraries:</span> Quick Sort
+					is often used in system libraries and programming languages
+					for its speed.
 				</li>
 			</ul>
 		</>
