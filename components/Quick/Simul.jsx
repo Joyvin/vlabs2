@@ -73,6 +73,7 @@ export default function Simul() {
 			const low = stack.pop();
 
 			if (high == low) {
+				setPivots([...pivots, low]);
 				continue;
 			}
 
@@ -84,6 +85,7 @@ export default function Simul() {
 					[arr[low], arr[high]] = [arr[high], arr[low]];
 					setData([...arr]);
 				}
+				ssetPivots([...pivots, low, high]);
 				continue;
 			}
 
@@ -94,9 +96,7 @@ export default function Simul() {
 			const pivotIndex = pData[0];
 			arr = pData[1];
 
-			let tData = pivots;
-			tData.push(pivotIndex);
-			setPivots([...tData]);
+			setPivots([...pivots, pivotIndex]);
 
 			console.log(arr);
 			if (pivotIndex + 1 < high) {
