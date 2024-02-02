@@ -8,10 +8,11 @@ export default function Theory() {
 			</h2>
 			<p>
 				Quick Sort is a highly efficient sorting algorithm that employs
-				a divide-and-conquer strategy. The algorithm selects a "pivot"
-				element from the array and partitions the other elements into
-				two subarrays, recursively sorting them. Let's explore the key
-				concepts and properties of Quick Sort:
+				a divide-and-conquer strategy. The algorithm selects a
+				&quot;pivot&quot; element from the array and partitions the
+				other elements into two subarrays, recursively sorting them.
+				Let&apos;s explore the key concepts and properties of Quick
+				Sort:
 			</p>
 			<br />
 			<h2>
