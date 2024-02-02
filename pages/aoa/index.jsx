@@ -3,16 +3,16 @@ import { Search } from "lucide-react";
 import axios from "axios";
 import Link from "next/link";
 
-export default function DS() {
-	const title = "Data Structures";
+export default function AOA() {
+	const title = "Algorithms";
+	const sub = "aoa";
 	const [subpages, setSubpages] = useState([
-		"Linked List",
-		"Queues",
-		"Stacks",
+		"Bubble Sort",
+		"Selection Sort",
+		"Quick Sort",
 	]);
-	const [pages, setPages] = useState(["Linked List", "Queues", "Stacks"]);
+	const [pages, setPages] = useState(["Bubble Sort"]);
 	const [rImages, setRImages] = useState([]);
-	const sub = "ds";
 
 	useEffect(() => {
 		getNum();

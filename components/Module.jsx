@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { Tab } from "@headlessui/react";
 import GuardedPage from "./GuardedPage";
+import Rate from "./Rate";
+import { Rating } from "@material-tailwind/react";
+import Heady from "./Heady";
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(" ");
@@ -18,7 +21,9 @@ export default function Module({ theory, simulation, lab, test, title }) {
 	const [activeTab, setActiveTab] = useState(0);
 
 	return (
-		<GuardedPage>
+		// <GuardedPage>
+		<div className="">
+			<Heady />
 			<div className="w-[90%] md:w-[80%] mx-auto">
 				<div className="flex items-center">
 					<h1 className="title py-6 text-[52px] text-sky-700">
@@ -57,7 +62,6 @@ export default function Module({ theory, simulation, lab, test, title }) {
 					<div className="relative">
 						{Object.keys(categories).map((key, idx) => {
 							let posts = categories[key];
-
 							const emptyTab = (prop) => {
 								return (
 									<div className="h-[60vh] w-full flex justify-center items-center text-[36px] text-gray-500">
@@ -65,7 +69,6 @@ export default function Module({ theory, simulation, lab, test, title }) {
 									</div>
 								);
 							};
-
 							return (
 								<div
 									key={idx}
@@ -89,6 +92,9 @@ export default function Module({ theory, simulation, lab, test, title }) {
 					</div>
 				</div>
 			</div>
-		</GuardedPage>
+			<Rate />
+			<Rating value={4} />
+		</div>
+		// </GuardedPage>
 	);
 }

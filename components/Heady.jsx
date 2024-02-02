@@ -126,7 +126,7 @@ const Heady = () => {
 						</svg>
 					</button>
 					<div
-						className="hidden w-full md:block md:w-auto"
+						className="hidden w-full md:w-auto"
 						id="navbar-default"
 					>
 						{!isLoggedIn ? (

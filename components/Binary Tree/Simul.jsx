@@ -19,39 +19,75 @@ const nodeTypes = {
 	arrayNode: array,
 };
 
-class BinaryTree {
+class Node {
 	constructor(data) {
+		this.id = null;
 		this.data = data;
 		this.left = null;
 		this.right = null;
+		this.x = null;
+		this.y = null;
+	}
+}
+
+class BinaryTree {
+	constructor() {
+		this.root = null;
+	}
+
+	insert(value) {
+		const newNode = new Node(value);
+
+		if (!this.root) {
+			newNode.id = 0;
+			newNode.x = 100;
+			newNode.y = 92;
+
+			this.root = newNode;
+		} else {
+			let currentNode = this.root;
+
+			while (currentNode !== null) {
+				if (value > currentNode.data) {
+					if (currentNode.right === null) {
+						newNode.x = currentNode.x + 275;
+						newNode.y = currentNode.y + 120;
+						newNode.id = currentNode.id * 2 + 2;
+						currentNode.right = newNode;
+						break;
+					} else {
+						currentNode = currentNode.right;
+					}
+				} else if (value < currentNode.data) {
+					if (currentNode.left === null) {
+						newNode.x = currentNode.x - 275;
+						newNode.y = currentNode.y + 120;
+						newNode.id = currentNode.id * 2 + 1;
+						currentNode.left = newNode;
+						break;
+					} else {
+						currentNode = currentNode.left;
+					}
+				} else {
+					// If the value is equal, you can decide whether to ignore, update, or handle it accordingly.
+					// In this case, I'm ignoring duplicates.
+					console.log("Ignoring duplicate value:", value);
+					break;
+				}
+			}
+		}
 	}
 }
 
 let bt = new BinaryTree();
 
-const initNodes = [
-	{
-		id: "0",
-		position: { x: 79, y: 92 },
-		data: {
-			label: "NULL",
-			type: "target",
-			name: "start",
-			address: "1102",
-			input: 1,
-			pos: "r",
-			type: "source",
-			selected: 0,
-		},
-		type: "variableNode",
-	},
-];
+const initNodes = [];
 
 export default function Tree() {
 	const [nodes, setNodes, onNodesChange] = useNodesState(initNodes);
 	const [edges, setEdges, onEdgesChange] = useEdgesState([]);
 	const [message, setMessage] = useState();
-	const [front, setFront] = useState(0);
+	const [root, setRoot] = useState(null);
 	const [ele, setEle] = useState();
 	const [dis, setDis] = useState(false);
 	const [arr, setArr] = useState([]);
@@ -130,7 +166,207 @@ export default function Tree() {
 		);
 	};
 
-	const append = async () => {
+	const append = () => {
+		var num = parseInt(ele);
+
+		if (!bt.root) {
+			const nodes = [
+				{
+					id: "0",
+					position: { x: 100, y: 92 },
+					data: {
+						label: "1000",
+						name: "node",
+						addNull: 0,
+						input: 0,
+						selected: 0,
+					},
+
+					style: {
+						width: 255,
+						height: 100,
+						backgroundColor: "#c9cee1",
+						border: "solid 1px gray",
+					},
+					type: "output",
+					targetPosition: "top",
+				},
+				{
+					id: "0d",
+					position: { x: 100, y: 25 },
+					data: {
+						label: ele,
+						name: "ele",
+						addNull: 0,
+						input: 0,
+						type: "target",
+						selected: 0,
+					},
+					parentNode: "0",
+					extent: "parent",
+					type: "variableNode",
+				},
+				{
+					id: "0r",
+					position: { x: 190, y: 25 },
+					data: {
+						label: "NULL",
+						name: "right",
+						addNull: 0,
+						input: 1,
+						type: "source",
+						selected: 0,
+						pos: "r",
+					},
+					parentNode: "0",
+					extent: "parent",
+					type: "variableNode",
+				},
+				{
+					id: "0l",
+					position: { x: 10, y: 25 },
+					data: {
+						label: "NULL",
+						name: "left",
+						addNull: 0,
+						input: 1,
+						type: "source",
+						selected: 0,
+						pos: "l",
+					},
+					parentNode: "0",
+					extent: "parent",
+					type: "variableNode",
+				},
+			];
+			nodes.forEach((node) => {
+				addNode(node);
+			});
+		} else {
+			var prevQ;
+			var idx = 0;
+			var q = bt.root;
+			var side = "";
+			while (q != null) {
+				prevQ = q;
+				if (ele > q.data) {
+					idx = idx * 2 + 2;
+					q = q.right;
+					side = "r";
+				} else {
+					idx = idx * 2 + 1;
+					q = q.left;
+					side = "l";
+				}
+			}
+
+			var direction = side == "r" ? 1 : -1;
+
+			const nodes = [
+				{
+					id: idx.toString(),
+					position: {
+						x: prevQ.x + 275 * direction,
+						y: prevQ.y + 120,
+					},
+					data: {
+						label: (1000 + idx * 12).toString(),
+						name: "node",
+						addNull: 0,
+						input: 0,
+						selected: 0,
+					},
+
+					style: {
+						width: 255,
+						height: 100,
+						backgroundColor: "#c9cee1",
+						border: "solid 1px gray",
+					},
+					type: "output",
+					targetPosition: "top",
+				},
+				{
+					id: idx.toString() + "d",
+					position: { x: 100, y: 25 },
+					data: {
+						label: ele,
+						name: "ele",
+						addNull: 0,
+						input: 0,
+						type: "target",
+						selected: 0,
+					},
+					parentNode: idx.toString(),
+					extent: "parent",
+					type: "variableNode",
+				},
+				{
+					id: idx.toString() + "r",
+					position: { x: 190, y: 25 },
+					data: {
+						label: "NULL",
+						name: "right",
+						addNull: 0,
+						input: 1,
+						type: "source",
+						selected: 0,
+						pos: "r",
+					},
+					parentNode: idx.toString(),
+					extent: "parent",
+					type: "variableNode",
+				},
+				{
+					id: idx.toString() + "l",
+					position: { x: 10, y: 25 },
+					data: {
+						label: "NULL",
+						name: "left",
+						addNull: 0,
+						input: 1,
+						type: "source",
+						selected: 0,
+						pos: "l",
+					},
+					parentNode: idx.toString(),
+					extent: "parent",
+					type: "variableNode",
+				},
+			];
+			nodes.forEach((node) => {
+				addNode(node);
+			});
+
+			updateNodeValue(
+				prevQ.id.toString() + side,
+				(1000 + idx * 12).toString()
+			);
+
+			const newEdge = {
+				id: "e" + idx.toString(),
+				source: prevQ.id.toString() + side,
+				target: idx.toString(),
+				animated: true,
+				markerEnd: {
+					type: MarkerType.ArrowClosed,
+					width: 20,
+					height: 20,
+					color: "#0d6efd",
+				},
+
+				style: {
+					stroke: "#0d6efd",
+				},
+			};
+
+			addEdge(newEdge);
+		}
+
+		bt.insert(num);
+	};
+
+	const append2 = async () => {
 		let idx, tx, t, a, newNode;
 
 		if (front === 0) {
@@ -139,7 +375,7 @@ export default function Tree() {
 					id: (++idx).toString(),
 					position: { x: 150, y: 92 },
 					data: {
-						label: ("1000" * (rear / 3 + 1)).toString(),
+						label: "1000".toString(),
 						name: "node",
 						addNull: 0,
 						input: 0,

@@ -24,11 +24,12 @@ export default function C() {
 		"Recursion",
 	]);
 	const [rImages, setRImages] = useState([]);
+	const sub = "c";
 
 	useEffect(() => {
 		getNum();
 		axios
-			.post("/api/subpages", { dir: "./pages/c" })
+			.post("/api/subpages", { dir: `./pages/${sub}` })
 			.then((e) => {
 				setSubpages(e.data.subdirs);
 				setPages(e.data.subdirs);
@@ -99,7 +100,7 @@ export default function C() {
 								return (
 									<div className="aspect-square" key={idx}>
 										<Link
-											href={`/c/${val
+											href={`/${sub}/${val
 												.replaceAll(" ", "-")
 												.toLowerCase()}`}
 											className="block shadow flex-col relative flex justify-end max-w-sm border border-gray-200 rounded-3xl shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"

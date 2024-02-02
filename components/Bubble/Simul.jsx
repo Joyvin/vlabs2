@@ -93,7 +93,6 @@ export default function Simul() {
 
 	return (
 		<>
-			<h1 className="my-4">Bubble Sort</h1>
 			<div>
 				<div className="">
 					<div className="flex justify-between">
@@ -107,13 +106,11 @@ export default function Simul() {
 									Generate Array
 								</button>
 								<button
-									className="btn text-white bg-blue-700 shadow rounded-lg p-2"
+									className="btn text-white bg-blue-700 shadow rounded-lg p-2 px5"
 									onClick={bubbleSort}
 									disabled={isSorting}
 								>
-									{isSorting
-										? "Sorting..."
-										: "Start Bubble Sort"}
+									{isSorting ? "Sorting..." : "Sort"}
 								</button>
 							</div>
 							{message && <Message value={message} />}
@@ -132,12 +129,7 @@ export default function Simul() {
 														editValue(index, e);
 													}}
 													type="number"
-													className="p-0 mr-3 shadow text-center border border-blue-700 rounded-lg"
-													style={{
-														height: `50px`,
-														width: `50px`,
-														outline: `none`,
-													}}
+													className="p-0 mr-3 shadow w-[50px] h-[50px] outline-0 text-center border border-blue-700 rounded-lg"
 													name=""
 												/>
 											) : (
@@ -151,12 +143,7 @@ export default function Simul() {
 														editValue(index, e);
 													}}
 													type="number"
-													className="mr-3 shadow text-center p-0 border border-blue-700 rounded-lg"
-													style={{
-														height: `50px`,
-														width: `50px`,
-														outline: `none`,
-													}}
+													className="mr-3 shadow w-[50px] h-[50px] outline-0 text-center p-0 border border-blue-700 rounded-lg"
 													name=""
 												/>
 											)
@@ -164,11 +151,11 @@ export default function Simul() {
 									: data.map((value, index) => (
 											<div
 												key={index}
-												className={`mr-3 col-1 flex p-2 items-center justify-center shadow rounded-lg border border-blue-700 ${
+												className={`mr-3 col-1 min-w-[50px] min-h-[50px] flex p-2 items-center justify-center shadow rounded-lg border border-blue-700 ${
 													index === eleSwap
-														? "eleSwap"
+														? "translate-x-[61px] ease-in duration-[0.3s]"
 														: index === eleSwap + 1
-														? "eleSwap2"
+														? "translate-x-[-61px] ease-in duration-[0.3s]"
 														: 2
 												} ${
 													index === lastIndex &&
@@ -181,10 +168,6 @@ export default function Simul() {
 														? "bg-blue-700 text-white"
 														: ""
 												}`}
-												style={{
-													minWidth: "50px",
-													minHeight: "50px",
-												}}
 											>
 												{value}
 											</div>
@@ -193,17 +176,6 @@ export default function Simul() {
 						</div>
 					</div>
 				</div>
-				<style jsx>{`
-					.eleSwap {
-						transform: translate(65px);
-						transition: 0.3s ease-in;
-					}
-
-					.eleSwap2 {
-						transform: translate(-65px);
-						transition: 0.3s ease-in;
-					}
-				`}</style>
 			</div>
 		</>
 	);

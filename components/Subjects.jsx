@@ -11,7 +11,7 @@ export default function Subjects() {
 					</div>
 				</div>
 				<div className="flex justify-center">
-					<div className="grid md:grid-cols-2 grid-cols-1 lg:ml-16 gap-10 px-10 lg:px-0 pb-10 w-full lg:w-[50%] ">
+					<div className="grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 lg:ml-16 gap-10 px-10 lg:px-0 pb-10 w-full">
 						<div className="">
 							<Link
 								style={{
@@ -20,7 +20,7 @@ export default function Subjects() {
 									backgroundSize: "cover",
 								}}
 								href="/c"
-								className="block flex-col relative flex justify-end aspect-square max-w-sm border border-gray-200 rounded-3xl shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+								className="mx-auto block flex-col relative flex justify-end aspect-square max-w-sm  rounded-3xl shadow-xl hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
 							>
 								<h5 className="mb-2 text-3xl font-bold text-white absolute justify-end mx-2.5 top-10 xl:text-[2.5rem] lg:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
 									C <br />
@@ -64,7 +64,7 @@ export default function Subjects() {
 									backgroundSize: "cover",
 								}}
 								href="/ds"
-								className="block flex-col relative flex justify-end aspect-square max-w-sm border border-gray-200 rounded-3xl shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+								className="mx-auto block flex-col relative flex justify-end aspect-square max-w-sm  rounded-3xl shadow-xl hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
 							>
 								<h5 className="mb-2 text-3xl font-bold text-white absolute mx-2.5 top-10  xl:text-[2.5rem] lg:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
 									Data <br />
@@ -100,58 +100,15 @@ export default function Subjects() {
 								</div>
 							</Link>
 						</div>
-						{/* <div className="">
+						<div className="">
 							<Link
 								style={{
 									background:
 										"url('/img/home/1.png') top no-repeat",
-									backgroundSize: "cover",
+									backgroundSize: "contain",
 								}}
-								href="#"
-								className="block flex-col relative flex justify-end aspect-square max-w-sm border border-gray-200 rounded-3xl shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
-							>
-								<h5 className="mb-2 text-3xl font-bold text-white absolute mx-2.5 top-10  xl:text-[2.5rem] lg:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-									NLP
-								</h5>
-								<div className="bg-white w-full rounded-b-3xl h-[30%] flex flex-col justify-center">
-									<div className="flex justify-around">
-										<div className="">
-											<div className="text-center">
-												<strong className="xl:text-4xl text-2xl">
-													8
-												</strong>
-											</div>
-											<div className="text-center">
-												<span className="text-xl">
-													Chapters
-												</span>
-											</div>
-										</div>
-										<div className="">
-											<div className="text-center">
-												<strong className="xl:text-4xl text-2xl">
-													13
-												</strong>
-											</div>
-											<div className="text-center">
-												<span className="text-xl">
-													Challenges
-												</span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</Link>
-						</div>
-						<div className="hidden xl:block">
-							<Link
-								style={{
-									background:
-										"url('/img/home/4.png') right top no-repeat",
-									backgroundSize: "cover",
-								}}
-								href="#"
-								className="block flex-col relative flex justify-end aspect-square max-w-sm border border-gray-200 rounded-3xl shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+								href="/aoa"
+								className="mx-auto block flex-col relative flex justify-end aspect-square max-w-sm  rounded-3xl shadow-xl hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
 							>
 								<h5 className="mb-2 text-3xl font-bold text-white absolute mx-2.5 top-10  xl:text-[2.5rem] lg:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
 									Algorithms
@@ -185,7 +142,50 @@ export default function Subjects() {
 									</div>
 								</div>
 							</Link>
-						</div> */}
+						</div>
+						{/* <div className="">
+							<Link
+								style={{
+									background:
+										"url('/img/home/1.png') top no-repeat",
+									backgroundSize: "cover",
+								}}
+								href="#"
+								className="mx-auto block flex-col relative flex justify-end aspect-square max-w-sm  rounded-3xl shadow-xl hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+							>
+								<h5 className="mb-2 text-3xl font-bold text-white absolute mx-2.5 top-10  xl:text-[2.5rem] lg:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+									NLP
+								</h5>
+								<div className="bg-white w-full rounded-b-3xl h-[30%] flex flex-col justify-center">
+									<div className="flex justify-around">
+										<div className="">
+											<div className="text-center">
+												<strong className="xl:text-4xl text-2xl">
+													8
+												</strong>
+											</div>
+											<div className="text-center">
+												<span className="text-xl">
+													Chapters
+												</span>
+											</div>
+										</div>
+										<div className="">
+											<div className="text-center">
+												<strong className="xl:text-4xl text-2xl">
+													13
+												</strong>
+											</div>
+											<div className="text-center">
+												<span className="text-xl">
+													Challenges
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</Link>
+						</div>*/}
 					</div>
 				</div>
 			</div>
