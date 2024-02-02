@@ -9,16 +9,13 @@ export default function Simul() {
 	const [gDown, setGDown] = useState();
 	const [gPivot, setGPivot] = useState();
 	const [swapPointer, setSwapPointer] = useState(false);
-	const [firstIndex, setFirstIndex] = useState();
+	const [pivots, setPivots] = useState([]);
 	const [message, setMessage] = useState();
 	const [eleSwap, setEleSwap] = useState();
 	const [subArr, setSubArr] = useState([0, 7]);
+	const [firstIndex, setFirstIndex] = useState();
 
 	const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
-	useEffect(() => {
-		console.log(firstIndex);
-	}, [firstIndex]);
 
 	const partition = async (arr, low, high) => {
 		const pivot = arr[low];
@@ -75,12 +72,31 @@ export default function Simul() {
 			const high = stack.pop();
 			const low = stack.pop();
 
+			if (high == low) {
+				continue;
+			}
+
+			if (high - low == 1) {
+				if (low > high) {
+					setGPivot(low);
+					setEleSwap(high);
+					await delay(800);
+					[arr[low], arr[high]] = [arr[high], arr[low]];
+					setData([...arr]);
+				}
+				continue;
+			}
+
 			setSubArr([low, high]);
 			await delay(800);
 
 			const pData = await partition(arr, low, high);
 			const pivotIndex = pData[0];
 			arr = pData[1];
+
+			let tData = pivots;
+			tData.push(pivotIndex);
+			setPivots([...tData]);
 
 			console.log(arr);
 			if (pivotIndex + 1 < high) {
@@ -276,7 +292,13 @@ export default function Simul() {
 														style={styles}
 													>
 														<div
-															className={`col-1 min-w-[50px] min-h-[50px] flex p-2 items-center justify-center shadow rounded-lg border border-blue-700 
+															className={`col-1 min-w-[50px] min-h-[50px] ${
+																pivots.includes(
+																	index
+																)
+																	? "bg-indigo-400"
+																	: ""
+															} flex p-2 items-center justify-center shadow rounded-lg border border-blue-700 
 													${index === gPivot || index === eleSwap ? "bg-blue-700 text-white" : ""}`}
 														>
 															{value}
