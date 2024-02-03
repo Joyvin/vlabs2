@@ -88,6 +88,8 @@ export default function Simul() {
 
 			if (high - low == 1) {
 				if (arr[low] > arr[high]) {
+					setGUp();
+					setGDown();
 					setGPivot(low);
 					setEleSwap(high);
 					await delay(1200);
