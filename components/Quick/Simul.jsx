@@ -58,6 +58,10 @@ export default function Simul() {
 		return [up, arr];
 	};
 
+	useEffect(() => {
+		console.log(pivots);
+	}, [pivots]);
+
 	const quickSort = async () => {
 		let arr = [...data];
 		const n = arr.length;
@@ -73,32 +77,40 @@ export default function Simul() {
 			const low = stack.pop();
 
 			if (high == low) {
-				setPivots([...pivots, low]);
-				continue;
-			}
-
-			if (high - low == 1) {
-				if (low > high) {
-					setGPivot(low);
-					setEleSwap(high);
-					await delay(800);
-					[arr[low], arr[high]] = [arr[high], arr[low]];
-					setData([...arr]);
-				}
-				ssetPivots([...pivots, low, high]);
+				// let tData = pivots;
+				// tData.push(low);
+				// setPivots([...tData]);
 				continue;
 			}
 
 			setSubArr([low, high]);
 			await delay(800);
 
+			if (high - low == 1) {
+				if (arr[low] > arr[high]) {
+					setGPivot(low);
+					setEleSwap(high);
+					await delay(1200);
+					[arr[low], arr[high]] = [arr[high], arr[low]];
+					setData([...arr]);
+					setEleSwap();
+				}
+				// let tData = pivots;
+				// tData.push(low);
+				// tData.push(high);
+				// setPivots([...tData]);
+				continue;
+			}
+
 			const pData = await partition(arr, low, high);
 			const pivotIndex = pData[0];
 			arr = pData[1];
 
-			setPivots([...pivots, pivotIndex]);
+			let tData = pivots;
+			tData.push(pivotIndex);
+			console.log(tData);
+			setPivots([...tData]);
 
-			console.log(arr);
 			if (pivotIndex + 1 < high) {
 				stack.push(pivotIndex + 1);
 				stack.push(high);
@@ -114,6 +126,7 @@ export default function Simul() {
 
 		setIsSorting(false);
 		setSubArr([]);
+		setPivots([]);
 		setGUp();
 		setGDown();
 		setGPivot();
