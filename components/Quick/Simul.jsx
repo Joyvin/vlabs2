@@ -76,15 +76,15 @@ export default function Simul() {
 			const high = stack.pop();
 			const low = stack.pop();
 
-			if (high == low) {
-				// let tData = pivots;
-				// tData.push(low);
-				// setPivots([...tData]);
-				continue;
-			}
-
 			setSubArr([low, high]);
 			await delay(800);
+
+			if (high == low) {
+				let tData = pivots;
+				tData.push(low);
+				setPivots([...tData]);
+				continue;
+			}
 
 			if (high - low == 1) {
 				if (arr[low] > arr[high]) {
@@ -97,10 +97,10 @@ export default function Simul() {
 					setData([...arr]);
 					setEleSwap();
 				}
-				// let tData = pivots;
-				// tData.push(low);
-				// tData.push(high);
-				// setPivots([...tData]);
+				let tData = pivots;
+				tData.push(low);
+				tData.push(high);
+				setPivots([...tData]);
 				continue;
 			}
 
